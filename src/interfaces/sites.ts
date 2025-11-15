@@ -1,3 +1,5 @@
+import type { HeadersInit } from "bun";
+
 export type TSiteKey =
   | "1337x"
   | "2Dimensions"
@@ -473,30 +475,6 @@ export type TSiteKey =
   | "Platzi"
   | "BabyRu";
 
-interface Headers6 {
-  "Sec-Fetch-Mode": string;
-}
-
-interface Headers5 {
-  Host: string;
-}
-
-interface Headers4 {
-  "accept-language": string;
-}
-
-interface Headers3 {
-  Cookie: string;
-}
-
-interface Headers2 {
-  Accept: string;
-}
-
-interface Headers {
-  "Content-Type": string;
-}
-
 interface Requestpayload2 {
   username: string;
 }
@@ -510,16 +488,18 @@ interface Variables {
   name: string;
 }
 
+export type TErrorType = "status_code" | "message" | "response_url";
+
 export interface TSite {
   __comment__?: string;
   errorMsg?: string[] | string;
   isNSFW?: boolean;
   regexCheck?: string;
   request_payload?: Requestpayload | Requestpayload2;
-  Headers?: Headers | Headers2 | Headers3 | Headers4 | Headers5 | Headers6;
+  Headers?: HeadersInit;
   request_method?: string;
   urlProbe?: string;
-  errorType: string;
+  errorType: TErrorType;
   url: string;
   urlMain: string;
   username_claimed: string;

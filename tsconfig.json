@@ -26,8 +26,10 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
     "paths": {
-      "@resources": ["./resources"],
-      "@lib": ["./src/lib"]
+      "@resources": ["./src/resources"],
+      "@libs": ["./src/libs"],
+      "@feats": ["./src/feats"],
+      "@src/types": ["./src/types"]
     }
   }
 }

@@ -1,5 +1,15 @@
-import { searchUser } from "./searchUser";
+import { search, singular_search } from "@feats";
+import { _sites } from "@resources";
+import { type SHERLOCK_STATUS } from "./interfaces/types";
+import { type TSite, type TSiteKey, type TSites } from "./interfaces/sites";
 
-const result = searchUser("fufufafa123");
+export {
+  singular_search as singularSearch,
+  _sites as sites,
+  type SHERLOCK_STATUS,
+  type TSite,
+  type TSiteKey,
+  type TSites,
+};
 
-console.log({ result });
+export default search;
